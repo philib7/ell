@@ -1,0 +1,17 @@
+*.log
+wp-config.php
+wp-content/backups/
+wp-content/cache/
+wp-content/upgrade/
+wp-content/uploads/
+wp-content/wp-cache-config.php
+wp-content/plugins/hello.php
+wp-content/themes/wp-from-scratch/BuildFrontAsset/node_modules
+wp-content/themes/wp-from-scratch/BuildFrontAsset/yarn.lock
+
+/.htaccess
+/license.txt
+/readme.html
+/sitemap.xml
+/sitemap.xml.gz
+
