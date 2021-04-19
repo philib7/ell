@@ -18,6 +18,6 @@
 
     <body id="body" <?php echo body_class(''); ?>>
         <header>
-
+        Bonjour
         </header>
         <main class="main <?php if (is_front_page()) {echo 'home';} ?>">
