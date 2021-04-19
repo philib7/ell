@@ -6,8 +6,8 @@ wp-content/upgrade/
 wp-content/uploads/
 wp-content/wp-cache-config.php
 wp-content/plugins/hello.php
-wp-content/themes/wp-from-scratch/BuildFrontAsset/node_modules
-wp-content/themes/wp-from-scratch/BuildFrontAsset/yarn.lock
+wp-content/themes/ellyzia/BuildFrontAsset/node_modules
+wp-content/themes/ellyzia/BuildFrontAsset/yarn.lock
 
 /.htaccess
 /license.txt
