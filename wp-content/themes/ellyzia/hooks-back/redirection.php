@@ -8,7 +8,7 @@ function ell_redirct_admin($redirect_to, $request, $user)
 
     if(is_array($user->roles) && in_array('editor', $user->roles))
     {
-        return site_url('/ajouter-des-produits/');
+        return site_url('/page-liste-produits/');
     }
 
     return home_url();
