@@ -17,23 +17,38 @@ if (!$user_info)
 ell_get_products();
 
 $products = ell_get_products();
+?>
 
-// on récupère l'ID de chaque produit
-foreach ($products as $key => $product)
-{
-    $product_id = $product->ID;
-    $product_Type = ell_get_type_byProduct_id($product_id);
-    $fields = get_fields($product_id);
-    var_dump($fields);
-}
-
+<?php
 get_header(); ?>
 
-<section>
-    <div>
-        <?php echo "test"; ?>
-    </div>
-</section>
+    <section>
+
+        <div class="container">
+
+            <ul>
+                <?php
+                // on récupère l'ID de chaque produit
+                foreach ($products as $key => $product)
+                {
+                    // on récupère les champs pour chaque produit
+                    $product_id = $product->ID;
+                    $fields = get_fields($product_id);
+                    //création de l'affichage d'une liste contenant tous les produits.
+                    //<a href: création d'un lien hyper texte pour une redirection vers la fiche produit ($product_id)
+                    ?>
+                    <li>
+                        <a href="<?php echo get_permalink($product_id); ?> ">
+                            <?php echo get_the_title($product_id); ?>
+                        </a>
+                    </li>
+                    <?php
+
+                }
+                ?>
+            </ul>
+        </div>
+    </section>
 
 <?php
 get_footer();
