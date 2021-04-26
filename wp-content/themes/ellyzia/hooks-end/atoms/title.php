@@ -7,7 +7,7 @@ function title($title) {
     <div>
         <!-- Pour la class voir le fichier style-theme.styl -->
         <div class="title">
-            <?php echo $title; ?>
+           <input type="text" value="<?php echo $title; ?>" name="title-product" class="bg-gris">
         </div>
 
         <div class="barre-title"></div>
