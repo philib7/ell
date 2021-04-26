@@ -17,10 +17,16 @@ $cloud2 = get_template_directory_uri().'/BuildFrontAsset/dist/images/bigcloud2.p
 <article class="background-admin py-16">
     <div class="container">
 
-        <div class="mt-12 py-6 bg-gris">
-            <div class="flex justify-end mr-4 underline">Modifier le produit</div>
+        <div class="mt-12 py-6 px-6 bg-gris z-20 relative ">
 
-            <div class="flex items-center">
+            <div>
+                <a href="<?php echo get_home_url(); ?>/page-liste-produits/">
+               retour </a>
+            </div>
+
+            <div class="flex justify-end underline">Modifier le produit</div>
+
+            <div class="flex items-center ">
                 <!-- Image debut -->
                 <div class="w-1/2 flex justify-center">
                     <img src="<?php echo $fields['gallery']['url']; ?>" width="150px" alt="">
@@ -45,7 +51,11 @@ $cloud2 = get_template_directory_uri().'/BuildFrontAsset/dist/images/bigcloud2.p
                         <?php ell_list_elements('Description :', $fields['description']); ?>
                         <?php ell_list_elements('Prix hors taxe :', $fields['prix_ht']); ?>
 
-                        <button name="save_edit_product" value="true" class="mt-2 bg-teal-500 p-4 flex items-center justify-center text-white border">Enregistrer</button>
+                        <div class="flex">
+                            <button name="save_edit_product" value="true" class="mt-2 bg-teal-500 p-4 flex items-center justify-center text-white border">Enregistrer</button>
+                            <button type=reset" name="annule_edit_product" value="true" class="mt-2 bg-teal-500 p-4 flex items-center justify-center text-white border">Annuler</button>
+                        </div>
+
                     </form>
                 </div>
                 <!-- Description du produit Fin -->

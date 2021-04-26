@@ -16,4 +16,5 @@ function edit_product() {
 	  	// Update the post into the database
 		wp_update_post( $my_post );
 	}
+
 }

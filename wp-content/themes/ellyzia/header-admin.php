@@ -34,4 +34,4 @@
                 </div>
             </div>
         </header>
-        <main class="main <?php if (is_front_page()) {echo 'home';} ?>">
+        <main class="main relative <?php if (is_front_page()) {echo 'home';} ?>">
