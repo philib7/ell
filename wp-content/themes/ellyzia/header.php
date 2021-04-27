@@ -16,8 +16,11 @@
         <?php wp_head(); ?>
     </head>
 
+    <?php $logo = get_template_directory_uri().'/BuildFrontAsset/dist/images/logo.svg'; ?>
+
     <body id="body" <?php echo body_class(''); ?>>
         <header>
-            Header Client
+            <?php ell_header_desktop($logo); ?>
         </header>
+
         <main class="main <?php if (is_front_page()) {echo 'home';} ?>">

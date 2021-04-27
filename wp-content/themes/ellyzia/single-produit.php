@@ -43,7 +43,7 @@ $cloud2 = get_template_directory_uri().'/BuildFrontAsset/dist/images/bigcloud2.p
                         </div>
 
                         <?php ell_list_elements('Stock :', $fields['stock']); ?>
-                        <?php ell_list_elements('Le type de la bague : ', $fields['type']); ?>
+                        <?php ell_list_elements('Le type : ', $fields['type']); ?>
                         <?php ell_list_elements('La référence : ', $fields['reference']); ?>
                         <?php ell_list_elements('La matiere :', $fields['matiere'][0]); ?>
                         <?php ell_list_elements('Le type de pierre :', $fields['pierre']); ?>
@@ -53,7 +53,7 @@ $cloud2 = get_template_directory_uri().'/BuildFrontAsset/dist/images/bigcloud2.p
 
                         <div class="flex">
                             <button name="save_edit_product" value="true" class="mt-2 bg-teal-500 p-4 flex items-center justify-center text-white border">Enregistrer</button>
-                            <button type=reset" name="annule_edit_product" value="true" class="mt-2 bg-teal-500 p-4 flex items-center justify-center text-white border">Annuler</button>
+                            <button type="reset" name="annule_edit_product" value="true" class="mt-2 bg-teal-500 p-4 flex items-center justify-center text-white border">Annuler</button>
                         </div>
 
                     </form>

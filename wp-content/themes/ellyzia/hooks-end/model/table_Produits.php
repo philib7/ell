@@ -8,6 +8,7 @@ function ell_get_products() {
             'post_type' => array (
                 'produit'
             ),
+            'posts_per_page' => -1
         )
     );
 

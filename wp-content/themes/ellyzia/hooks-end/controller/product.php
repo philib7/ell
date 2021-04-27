@@ -18,3 +18,28 @@ function edit_product() {
 	}
 
 }
+
+function add_product() {
+	if (isset($_POST['save_add_product'])) {
+		$title = $_POST['title-product'];
+		$type = $_POST['type-product'];
+
+		// Insert du nouveau produit
+		// TODO Déplacer le code dans le modal et créer une function
+		// Create post object
+		$product = array(
+			'post_title'    => wp_strip_all_tags( $title ),
+			'post_content'  => '',
+			'post_status'   => 'publish',
+			'post_author'   => 1,
+			'post_type'		=> 'produit',
+			'post_category' => null
+		);
+
+		// Insert the post into the database
+		$id_product = wp_insert_post( $product );
+
+		// Avec l'id editer les champs du produit
+		ell_set_type_byProduct_id($id_product, $type);
+	}
+}
