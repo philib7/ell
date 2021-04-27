@@ -21,10 +21,13 @@ function edit_product() {
 
 function add_product() {
 	if (isset($_POST['save_add_product'])) {
+	    // on recuperre les données envoyées par le client depuis la vue :page_liste_produit
 		$title = $_POST['title-product'];
 		$type = $_POST['type-product'];
 		$reference = $_POST['reference-product'];
 		$matiere = $_POST['matiere-product'];
+        $pierre = $_POST['pierre-product'];
+        $taille = $_POST['taille-product'];
 
 		// Insert du nouveau produit
 		// TODO Déplacer le code dans le modal et créer une function
@@ -45,5 +48,7 @@ function add_product() {
 		ell_set_type_byProduct_id($id_product, $type);
 		ell_set_reference_byProduct_id($id_product, $reference);
 		ell_set_matiere_byProduct_id($id_product, $matiere);
+        ell_set_pierre_byProduct_id($id_product,  $pierre);
+        ell_set_taille_byProduct_id($id_product,  $taille);
 	}
 }
