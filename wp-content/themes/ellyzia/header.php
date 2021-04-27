@@ -19,7 +19,7 @@
     <?php $logo = get_template_directory_uri().'/BuildFrontAsset/dist/images/logo.svg'; ?>
 
     <body id="body" <?php echo body_class(''); ?>>
-        <header>
+        <header class="bg-white">
             <?php ell_header_desktop($logo); ?>
         </header>
 

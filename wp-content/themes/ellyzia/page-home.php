@@ -7,10 +7,13 @@ $cloud1 = get_template_directory_uri().'/BuildFrontAsset/dist/images/bigcloud.pn
 $cloud2 = get_template_directory_uri().'/BuildFrontAsset/dist/images/bigcloud2.png';
 
 $homeCollection = get_template_directory_uri().'/BuildFrontAsset/dist/images/homecollection.png';
-
+//gradient-RoseBlue
 get_header(); ?>
 
-<section class="gradient-RoseBlue relative pt-32 pb-32 overflow-hidden">
+<div class="sky"></div>
+<div class="sky2"></div>
+
+<section class="relative pt-32 pb-32 overflow-hidden">
     <!-- Nuage 1 -->
     <img src="<?php echo $cloud1; ?>" alt="" class="absolute cloud1">
 

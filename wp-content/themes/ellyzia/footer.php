@@ -3,7 +3,7 @@
 if ( !defined('ABSPATH')) exit;
 $logo = get_template_directory_uri().'/BuildFrontAsset/dist/images/logo.svg';
 ?>
-            <footer>
+            <footer class="bg-white">
                 <div class="container py-24">
                     <div class="flex justify-between items-start">
                         <!-- col1 -->
@@ -28,7 +28,7 @@ $logo = get_template_directory_uri().'/BuildFrontAsset/dist/images/logo.svg';
                         <div class="mt-6">
                             <div class="text-lg font-semibold text-EllGrayLight">Nos Collection</div>
 
-                            <ul class="mt-14">
+                            <ul class="mt-8">
                                 <li class="text-EllGrayLight">Coll</li>
                                 <li class="mt-2 text-EllGrayLight">Coll</li>
                                 <li class="mt-2 text-EllGrayLight">Coll</li>
@@ -40,7 +40,7 @@ $logo = get_template_directory_uri().'/BuildFrontAsset/dist/images/logo.svg';
                         <div class="mt-6">
                             <div class="text-lg font-semibold text-EllGrayLight">Liens utiles</div>
 
-                            <ul class="mt-14">
+                            <ul class="mt-8">
                                 <li class="text-EllGrayLight">Coll</li>
                                 <li class="mt-2 text-EllGrayLight">Coll</li>
                                 <li class="mt-2 text-EllGrayLight">Coll</li>
