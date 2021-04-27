@@ -72,3 +72,35 @@ function ell_set_matiere_byProduct_id ($id, $value) {
         return;
     }
 }
+// récupération de la pierre d'un produit
+function ell_get_pierre_byProduct_id ($id) {
+    if ($id) {
+        return get_field('field_608010d4fa485', $id);
+    } else {
+        return false;
+    }
+}
+
+function ell_set_pierre_byProduct_id ($id, $value) {
+    if ($id && $value) {
+        return update_field('field_608010d4fa485', $value, $id);
+    } else {
+        return;
+    }
+}
+// récupération de la taille d'un produit
+function ell_get_taille_byProduct_id ($id) {
+    if ($id) {
+        return get_field('field_6080120076fbd', $id);
+    } else {
+        return false;
+    }
+}
+
+function ell_set_taille_byProduct_id ($id, $value) {
+    if ($id && $value) {
+        return update_field('field_6080120076fbd', $value, $id);
+    } else {
+        return;
+    }
+}

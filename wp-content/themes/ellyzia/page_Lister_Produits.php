@@ -21,9 +21,11 @@ $products = ell_get_products();
 
 $field = get_field_object('field_60800db83a168', 'option', false);
 $field_matiere = get_field_object('field_60801062fa484', 'option', false);
+$field_pierre = get_field_object('field_608010d4fa485', 'option', false);
 
 $choices = $field['choices'];
 $choices_matiere = $field_matiere['choices'];
+$choices_pierre = $field_pierre['choices'];
 
 get_header('admin'); ?>
 
@@ -61,18 +63,20 @@ get_header('admin'); ?>
                             <div class="mb-4 font-semibold text-xl">
                                 Nouveau produit
                             </div>
-
+                            <!--  debut choix nom -->
                             <div class="mb-4 w-48">
                                 <input type="text" name="title-product" placeholder="Le nom" class="bg-gris w-full placeholder-black">
                                 <div class="w-full border-b border-gray-800 h-1"></div>
                             </div>
 
+                            <!--  debut choix ref interne-->
                             <div class="mb-4 w-48">
                                 <input type="text" name="reference-product" placeholder="La reference interne" class="bg-gris w-full placeholder-black">
                                 <div class="w-full border-b border-gray-800 h-1"></div>
                             </div>
 
                             <?php
+                            // debut choix type
                             if (isset($choices) && !empty($choices) && is_array($choices)) {
                             ?>
                             <label for="" class="flex">
@@ -114,6 +118,35 @@ get_header('admin'); ?>
                             <?php
                             }
                             ?>
+
+
+                            <?php
+                            // Début choix pierre
+                            if (isset($choices_pierre) && !empty($choices_pierre) && is_array($choices_pierre)) {
+                                ?>
+                                <label for="" class="flex">
+                                    <div>Pierre : </div>
+                                    <select name="pierre-product" id="" class="ml-4">
+                                        <?php
+                                        foreach ($choices_pierre as $key => $choice) {
+                                            ?>
+                                            <option value="<?php echo $key; ?>">
+                                                <?php echo $choice; ?>
+                                            </option>
+                                            <?php
+                                        }
+                                        ?>
+                                    </select>
+                                </label>
+                                <?php
+                            }
+                            ?>
+                            <!--  debut choix taille -->
+                            <div class="mb-4 w-48">
+                                <input type="number" name="taille-product" placeholder="taille" class="bg-gris w-full placeholder-black" min="46" max="55" value="46">
+                                <div class="w-full border-b border-gray-800 h-1"></div>
+                            </div>
+
 
                             <div class="flex">
                                 <button name="save_add_product" value="true" class="mt-2 bg-teal-500 p-4 flex items-center justify-center text-white border">Enregistrer</button>
