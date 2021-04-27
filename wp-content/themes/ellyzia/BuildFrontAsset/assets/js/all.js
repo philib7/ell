@@ -2,6 +2,7 @@
 
 window.addEventListener("DOMContentLoaded", (event) => {
     toggle_stock()
+    move_cloud()
 });
 
 function toggle_stock () {
@@ -10,22 +11,28 @@ function toggle_stock () {
     if (trigger) {
         trigger.addEventListener('click', function(event) {
             console.log('test');
+        });
+    }
+}
 
-            // Don't follow the link
-            //event.preventDefault();
+function move_cloud () {
+    const cloud1 = document.querySelector('.cloud1')
+    const cloud2 = document.querySelector('.cloud2')
+
+    function handler(entries, observer) {
+        entries.forEach(element => {
+            if (element.isIntersecting) {
+                element['target'].classList.add('active-cloud')
+            } else {
+                element['target'].classList.remove('active-cloud')
+            }
         });
     }
 
-    //var togglers = document.querySelectorAll('.labelMain')
+    let observer = new IntersectionObserver(handler);
 
-    // if (togglers) {
-    //     for (var i = 0; i < togglers.length; i++) {
-    //         togglers[i].addEventListener('click', function(event) {
-    //             form.submit()
-
-    //             // Don't follow the link
-    //             //event.preventDefault();
-    //         });
-    //     }
-    // }
+    if (cloud1) {
+        observer.observe(cloud1);
+        observer.observe(cloud2);
+    }
 }
