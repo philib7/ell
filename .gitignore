@@ -10,8 +10,6 @@ wp-content/themes/ellyzia/BuildFrontAsset/node_modules
 wp-content/themes/ellyzia/BuildFrontAsset/yarn.lock
 wp-content/themes/ellyzia/BuildFrontAsset/package-lock.json
 wp-content/themes/ellyzia/BuildFrontAsset/dist
-wp-content/themes/ellyzia/BuildFrontAsset/dist/
-wp-content/themes/ellyzia/BuildFrontAsset/dist/*
 /.htaccess
 /license.txt
 /readme.html
