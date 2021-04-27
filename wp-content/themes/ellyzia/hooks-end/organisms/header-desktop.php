@@ -3,16 +3,19 @@ if ( !defined('ABSPATH')) exit;
 
 function ell_header_desktop($logo) {
 ?>
-    <div class="container py-6">
-        <div class="flex items-center">
-            <div>
-                <img src="<?php echo $logo; ?>" alt="" width="150px" class="logo">
+    <div class="container pt-14 pb-10">
+        <div class="flex items-end">
+            <div class="logo">
+                <?php
+                $svg = file_get_contents($logo);
+                echo $svg;
+                ?>
             </div>
 
-            <div class="ml-12 flex">
-                <div>Lien 1</div>
-                <div class="ml-4">Lien 2</div>
-                <div class="ml-4">Lien 3</div>
+            <div class="ml-24 flex text-xl text-EllGrayLight mb-3">
+                <div>Joaillerie</div>
+                <div class="ml-14">La Maison</div>
+                <div class="ml-14">Service client</div>
             </div>
         </div>
     </div>

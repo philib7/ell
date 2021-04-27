@@ -38,3 +38,37 @@ function ell_set_type_byProduct_id ($id, $value) {
         return;
     }
 }
+
+// récupération de la ref d'un produit
+function ell_get_reference_byProduct_id ($id) {
+    if ($id) {
+        return get_field('field_60800fb5fa483', $id);
+    } else {
+        return false;
+    }
+}
+
+function ell_set_reference_byProduct_id ($id, $value) {
+    if ($id && $value) {
+        return update_field('field_60800fb5fa483', $value, $id);
+    } else {
+        return;
+    }
+}
+
+// récupération de la ref d'un produit
+function ell_get_matiere_byProduct_id ($id) {
+    if ($id) {
+        return get_field('field_60801062fa484', $id);
+    } else {
+        return false;
+    }
+}
+
+function ell_set_matiere_byProduct_id ($id, $value) {
+    if ($id && $value) {
+        return update_field('field_60801062fa484', $value, $id);
+    } else {
+        return;
+    }
+}

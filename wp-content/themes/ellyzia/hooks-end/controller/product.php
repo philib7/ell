@@ -23,6 +23,8 @@ function add_product() {
 	if (isset($_POST['save_add_product'])) {
 		$title = $_POST['title-product'];
 		$type = $_POST['type-product'];
+		$reference = $_POST['reference-product'];
+		$matiere = $_POST['matiere-product'];
 
 		// Insert du nouveau produit
 		// TODO Déplacer le code dans le modal et créer une function
@@ -41,5 +43,7 @@ function add_product() {
 
 		// Avec l'id editer les champs du produit
 		ell_set_type_byProduct_id($id_product, $type);
+		ell_set_reference_byProduct_id($id_product, $reference);
+		ell_set_matiere_byProduct_id($id_product, $matiere);
 	}
 }

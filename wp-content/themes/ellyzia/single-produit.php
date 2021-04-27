@@ -45,7 +45,7 @@ $cloud2 = get_template_directory_uri().'/BuildFrontAsset/dist/images/bigcloud2.p
                         <?php ell_list_elements('Stock :', $fields['stock']); ?>
                         <?php ell_list_elements('Le type : ', $fields['type']); ?>
                         <?php ell_list_elements('La référence : ', $fields['reference']); ?>
-                        <?php ell_list_elements('La matiere :', $fields['matiere'][0]); ?>
+                        <?php ell_list_elements('La matiere :', $fields['matiere']); ?>
                         <?php ell_list_elements('Le type de pierre :', $fields['pierre']); ?>
                         <?php ell_list_elements('La taille :', $fields['taille']); ?>
                         <?php ell_list_elements('Description :', $fields['description']); ?>

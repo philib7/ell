@@ -6,7 +6,7 @@
 */
 module.exports = {
     purge: {
-      // Learn more on https://tailwindcss.com/docs/controlling-file-size/#removing-unused-css 
+      // Learn more on https://tailwindcss.com/docs/controlling-file-size/#removing-unused-css
       content: [
         '../**/**/**/*.php',
         '../**/**/*.php',
@@ -28,13 +28,35 @@ module.exports = {
         }
       },
       extend: {
-        margin: {},
+        fontSize: {
+          '7xl': [
+            '4.5rem', {
+              letterSpacing: '-0.02em',
+              lineHeight: '1',
+            }
+          ],
+          '8xl': [
+            '6rem', {
+              letterSpacing: '-0.02em',
+              lineHeight: '1',
+            }
+          ],
+        },
+        margin: {
+          14: '3.5rem'
+        },
+        padding: {
+          14: '3.5rem'
+        },
         height: {},
-        colors: {},
+        colors: {
+          EllGrayLight: '#727380',
+          EllGrayVeryLight: '#F1F2FA'
+        },
         spacing: {},
         borderRadius: {},
         inset: {
-          "1/2": '50%'
+          "1/2": '50%',
         },
         minHeight: {}
       }
@@ -42,4 +64,3 @@ module.exports = {
     variants: {},
     plugins: []
   }
-  
