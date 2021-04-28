@@ -41,7 +41,7 @@ get_header(); ?>
             </a>
 
             <!-- Left -->
-            <a class="bg-EllGrayVeryLight md:w-47 w-full flex justify-center card card-min mt-6 md:mt-16" href="#">
+            <a class="bg-EllGrayVeryLight md:w-47 w-full flex justify-center card mt-6 md:mt-16" href="#">
                 <div style="" class="w-full bg-center pb-6 relative">
                     <div class="">
                         <img class="w-full" src="<?php echo get_template_directory_uri(); ?>/BuildFrontAsset/dist/images/photo-1454117096348-e4abbeba002c.png" alt="">
@@ -62,7 +62,7 @@ get_header(); ?>
                 </div>
             </a>
 
-            <a class="bg-EllGrayVeryLight md:w-47 w-full flex justify-center card card-min mt-6 md:mt-16" href="#">
+            <a class="bg-EllGrayVeryLight md:w-47 w-full flex justify-center card mt-6 md:mt-16" href="#">
                 <div style="" class="w-full bg-center pb-6 relative">
                     <div class="">
                         <img class="w-full" src="<?php echo get_template_directory_uri(); ?>/BuildFrontAsset/dist/images/summer.png" alt="">
@@ -102,7 +102,7 @@ get_header(); ?>
             </a>
 
             <!-- Left -->
-            <a class="bg-EllGrayVeryLight md:w-47 w-full flex justify-center card card-min mt-6 md:mt-16" href="#">
+            <a class="bg-EllGrayVeryLight md:w-47 w-full flex justify-center card mt-6 md:mt-16" href="#">
                 <div style="" class="w-full bg-center pb-6 relative">
                     <div class="">
                         <img class="w-full" src="<?php echo get_template_directory_uri(); ?>/BuildFrontAsset/dist/images/photo-1454117096348-e4abbeba002c.png" alt="">
@@ -123,7 +123,7 @@ get_header(); ?>
                 </div>
             </a>
 
-            <a class="bg-EllGrayVeryLight md:w-47 w-full flex justify-center card card-min mt-6 md:mt-16" href="#">
+            <a class="bg-EllGrayVeryLight md:w-47 w-full flex justify-center card mt-6 md:mt-16" href="#">
                 <div style="" class="w-full bg-center pb-6 relative">
                     <div class="">
                         <img class="w-full" src="<?php echo get_template_directory_uri(); ?>/BuildFrontAsset/dist/images/summer.png" alt="">
