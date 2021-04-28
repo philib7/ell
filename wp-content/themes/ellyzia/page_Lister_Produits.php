@@ -59,7 +59,7 @@ get_header('admin'); ?>
                             ?>
                         </ul>
 
-                        <form action="#" method="POST" class="mb-0 pb-6">
+                        <form action="#" method="POST" class="mb-0 pb-6" enctype="multipart/form-data">
                             <div class="mb-4 font-semibold text-xl">
                                 Nouveau produit
                             </div>
@@ -148,10 +148,42 @@ get_header('admin'); ?>
                                 <div class="w-full border-b border-gray-800 h-1"></div>
                             </div>
 
+                            <!--  debut choix description -->
+                            <div class="mb-4 w-48">
+                                <textarea id="story" name="description-product" rows="5" cols="33" class="bg-gris w-full placeholder-black">
+                                </textarea>
+
+                                <div class="w-full border-b border-gray-800 h-1"></div>
+                            </div>
+
+                            <!--  debut choix prixht -->
+                            <div class="mb-4 w-48">
+                              <input type="text" name="prixht-product" placeholder="prixht" class="bg-gris w-full placeholder-black">
+                            </div>
+                            <!--  debut choix image-->
+                            <div class="mb-4 w-48">
+                                <input type="file" name="image-product" placeholder="image" class="bg-gris w-full placeholder-black">
+                            </div>
+
+                            <!--  debut choix stock -->
+
+                            <div class="mb-4 w-48" >
+                                <label for="stock">
+                                    <div class="flex">
+                                        <div>En Stock ?</div>
+                                        <div class="ml-4">
+                                           <input id="stock" type="checkbox" name="stock-product" placeholder="stock" class="bg-gris w-full placeholder-black">
+                                        </div>
+                                    </div>
+                                   <div class="w-full border-b border-gray-800 h-1"></div>
+                                </label>
+                            </div>
+
                             <div class="flex">
                                 <button name="save_add_product" value="true" class="mt-2 bg-teal-500 p-4 flex items-center justify-center text-white border">Enregistrer</button>
                                 <button type="reset" name="annule_add_product" value="true" class="ml-4 mt-2 bg-teal-500 p-4 flex items-center justify-center text-white border">Annuler</button>
                             </div>
+
                         </form>
                     </div>
                 </div>

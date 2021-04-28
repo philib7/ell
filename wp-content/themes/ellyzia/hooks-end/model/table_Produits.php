@@ -96,10 +96,35 @@ function ell_get_taille_byProduct_id ($id) {
         return false;
     }
 }
-
+// envoie de la taille
 function ell_set_taille_byProduct_id ($id, $value) {
     if ($id && $value) {
         return update_field('field_6080120076fbd', $value, $id);
+    } else {
+        return;
+    }
+}
+
+// envoie de description
+function ell_set_description_byProduct_id ($id, $value) {
+    if ($id && $value) {
+        return update_field('field_6080127676fbe', $value, $id);
+    } else {
+        return;
+    }
+}
+// envoie de stock
+function ell_set_stock_byProduct_id ($id, $value) {
+    if ($id && $value) {
+        return update_field('field_608013dce52aa', $value, $id);
+    } else {
+        return;
+    }
+}
+// envoie de prixht
+function ell_set_prixht_byProduct_id ($id, $value) {
+    if ($id && $value) {
+        return update_field('field_60801375e52a7', $value, $id);
     } else {
         return;
     }
