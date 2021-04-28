@@ -141,12 +141,12 @@ get_header('admin'); ?>
                                 <?php
                             }
                             ?>
+
                             <!--  debut choix taille -->
                             <div class="mb-4 w-48">
                                 <input type="number" name="taille-product" placeholder="taille" class="bg-gris w-full placeholder-black" min="46" max="55" value="46">
                                 <div class="w-full border-b border-gray-800 h-1"></div>
                             </div>
-
 
                             <div class="flex">
                                 <button name="save_add_product" value="true" class="mt-2 bg-teal-500 p-4 flex items-center justify-center text-white border">Enregistrer</button>

@@ -49,6 +49,9 @@ module.exports = {
           14: '3.5rem'
         },
         height: {},
+        width: {
+          '47': '47.666%'
+        },
         colors: {
           EllGrayLight: '#727380',
           EllGrayVeryLight: '#F1F2FA'

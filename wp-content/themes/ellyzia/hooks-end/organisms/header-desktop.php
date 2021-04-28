@@ -3,7 +3,7 @@ if ( !defined('ABSPATH')) exit;
 
 function ell_header_desktop($logo) {
 ?>
-    <div class="container pt-10 pb-10">
+    <div class="container pt-4 pb-6">
         <div class="flex items-end">
             <div class="logo">
                 <?php

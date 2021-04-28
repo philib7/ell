@@ -28,7 +28,7 @@ $logo = get_template_directory_uri().'/BuildFrontAsset/dist/images/logo.svg';
                         <div class="mt-6">
                             <div class="text-lg font-semibold text-EllGrayLight">Nos Collection</div>
 
-                            <ul class="mt-8">
+                            <ul class="mt-8 font-montserrat">
                                 <li class="text-EllGrayLight">Coll</li>
                                 <li class="mt-2 text-EllGrayLight">Coll</li>
                                 <li class="mt-2 text-EllGrayLight">Coll</li>
@@ -40,7 +40,7 @@ $logo = get_template_directory_uri().'/BuildFrontAsset/dist/images/logo.svg';
                         <div class="mt-6">
                             <div class="text-lg font-semibold text-EllGrayLight">Liens utiles</div>
 
-                            <ul class="mt-8">
+                            <ul class="mt-8 font-montserrat">
                                 <li class="text-EllGrayLight">Coll</li>
                                 <li class="mt-2 text-EllGrayLight">Coll</li>
                                 <li class="mt-2 text-EllGrayLight">Coll</li>

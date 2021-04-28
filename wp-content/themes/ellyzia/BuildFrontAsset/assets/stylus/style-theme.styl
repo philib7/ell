@@ -1,3 +1,11 @@
+@font-face
+   font-family Montserrat
+   font-style normal
+   src url(../fonts/montserrat/Montserrat-Medium.ttf)
+
+.font-montserrat
+  font-family Montserrat
+
 .title
   font-size 30px
   font-weight bold
@@ -17,7 +25,6 @@
 .background-admin
   background rgb(205,220,249)
   background radial-gradient(circle, rgba(205,220,249,1) 0%, rgba(249,238,171,1) 0%, rgba(183,199,251,1) 100%)
-
 
 .gradient-RoseBlue
   animation-name animation
@@ -60,10 +67,18 @@
   max-width 1668px
 
 .card
-  min-height 741px
+  opacity 0.94
   &-discover
     transition all 0.75s
     transform translateY(-100%)
+  &-min
+    min-height 0
+    @media $md
+      min-height 0
+    @media $lg
+      min-height 600px
+    @media $xl
+      min-height 741px
 
 .card:hover
   .card-discover
@@ -96,7 +111,7 @@
 .sky {
   z-index -2
   position: fixed;
-  height: 100vh;
+  height: 135vh;
   width: 100%;
   top: 0;
   left: 0;
@@ -105,7 +120,7 @@
 .sky2 {
   z-index -2
   position: fixed;
-  height: 100vh;
+  height: 135vh;
   width: 100%;
   top: 0;
   left: 0;
