@@ -20,7 +20,11 @@
 
     <body id="body" <?php echo body_class(''); ?>>
         <header class="bg-white">
-            <?php ell_header_desktop($logo); ?>
+            <?php
+            if (!wp_is_mobile()) {
+                ell_header_desktop($logo);
+            }
+            ?>
         </header>
 
         <main class="main <?php if (is_front_page()) {echo 'home';} ?>">
