@@ -18,6 +18,7 @@ function toggle_stock () {
 function move_cloud () {
     const cloud1 = document.querySelector('.cloud1')
     const cloud2 = document.querySelector('.cloud2')
+    const cloudCard = document.querySelector('.cloud-card')
 
     function handler(entries, observer) {
         entries.forEach(element => {
@@ -34,5 +35,6 @@ function move_cloud () {
     if (cloud1) {
         observer.observe(cloud1);
         observer.observe(cloud2);
+        observer.observe(cloudCard);
     }
 }

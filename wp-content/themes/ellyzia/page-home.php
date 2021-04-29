@@ -11,10 +11,10 @@ $homeHouse = get_template_directory_uri().'/BuildFrontAsset/dist/images/capture.
 //gradient-RoseBlue
 get_header(); ?>
 
-<div class="sky"></div>
-<div class="sky2"></div>
-
 <section class="relative py-12 overflow-hidden">
+    <div class="sky"></div>
+    <div class="sky2"></div>
+
     <!-- Nuage 1 -->
     <img src="<?php echo $cloud1; ?>" alt="" class="absolute cloud1">
 
@@ -26,7 +26,7 @@ get_header(); ?>
             <a class="flex flex-col lg:flex-row items-center justify-between bg-EllGrayVeryLight card w-full" href="#">
                 <div class="text-center text-EllGrayLight lg:w-1/2 w-full flex flex-col items-center justify-center mt-8 px-4 lg:pt-0">
                     <div class="uppercase font-montserrat">Collection</div>
-                    <div class="lg:text-7xl text-4xl">Délinéation</div>
+                    <?php title('Délinéation'); ?>
 
                     <div class="mt-6 uppercase lg:overflow-hidden text-center">
                         <div class="text-sm lg:text-base card-discover font-montserrat tracking-widest">
@@ -50,7 +50,7 @@ get_header(); ?>
                     <div class="text-EllGrayLight mt-8 lg:mt-16 absolute top-0 w-full">
                         <div class="flex flex-col items-center">
                             <div class="uppercase font-montserrat">Collection</div>
-                            <div class="lg:text-7xl text-4xl">Ondes</div>
+                            <?php title('Ondes'); ?>
                         </div>
 
                         <div class="mt-6 uppercase lg:overflow-hidden text-center">
@@ -71,7 +71,7 @@ get_header(); ?>
                     <div class="text-EllGrayLight mt-8 lg:mt-16 absolute top-0 w-full">
                         <div class="flex flex-col items-center">
                             <div class="uppercase font-montserrat">Collection</div>
-                            <div class="lg:text-7xl text-4xl">Cap</div>
+                            <?php title('Cap'); ?>
                         </div>
 
                         <div class="mt-6 uppercase lg:overflow-hidden text-center">
@@ -87,7 +87,7 @@ get_header(); ?>
             <a class="flex flex-col lg:flex-row items-center justify-between bg-EllGrayVeryLight card w-full mt-6 md:mt-16" href="#">
                 <div class="text-center text-EllGrayLight lg:w-1/2 w-full flex flex-col items-center justify-center mt-8 px-4 lg:pt-0">
                     <div class="uppercase font-montserrat">Collection</div>
-                    <div class="lg:text-7xl text-4xl">Délinéation</div>
+                    <?php title('Délinéation'); ?>
 
                     <div class="mt-6 uppercase lg:overflow-hidden text-center">
                         <div class="text-sm lg:text-base card-discover font-montserrat tracking-widest">

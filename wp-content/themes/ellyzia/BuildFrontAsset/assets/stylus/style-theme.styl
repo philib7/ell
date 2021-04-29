@@ -6,6 +6,9 @@
 .font-montserrat
   font-family Montserrat
 
+.h-80p
+  height 80%
+
 .title
   font-size 30px
   font-weight bold
@@ -45,17 +48,6 @@
   }
 }
 
-.cloud1
-  top 3%
-  width 55%
-  transition all 2.5s infiny
-
-.cloud2
-  bottom 3%
-  right -20%
-  width 55%
-  transition all 2.5s
-
 .logo
   fill #727380
   width 142px
@@ -76,11 +68,32 @@
   .card-discover
     transform translateY(0)
 
+// CLOUDS
 .active-cloud
   &.cloud1
     animation 20s linear 0s infinite alternate move_cloud1
   &.cloud2
     animation 20s linear 0s infinite alternate move_cloud2
+  &.cloud-card
+    animation 8s linear 0s infinite alternate move_cloud1
+
+.cloud1
+  top 3%
+  width 55%
+  transition all 2.5s infiny
+
+.cloud2
+  bottom 3%
+  right -20%
+  width 55%
+  transition all 2.5s
+
+.cloud-card
+  top 18% !important
+  width 155% !important
+  max-width 155%
+  transition all 2.5s infiny
+// Fin Cloud
 
 @keyframes move_cloud1 {
   from { margin-left: -16%; }
@@ -116,6 +129,18 @@
   width: 100%;
   top: 0;
   left: 0;
+  animation: firmament-2 50s linear infinite;
+}
+
+.sky-card {
+  position: relative;
+  width: 100%;
+  animation: firmament-1 50s linear infinite;
+}
+.sky2-card {
+  position: absolute;
+  top: 0;
+  width: 100%;
   animation: firmament-2 50s linear infinite;
 }
 @keyframes firmament-1 {

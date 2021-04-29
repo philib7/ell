@@ -5,14 +5,16 @@ $logo = get_template_directory_uri().'/BuildFrontAsset/dist/images/logo.svg';
 ?>
             <footer class="bg-white">
                 <div class="container py-24">
-                    <div class="lg:flex justify-between items-start">
+                    <div class="lg:flex text-center lg:text-left justify-between items-start">
                         <!-- col1 -->
                         <div>
-                            <div class="logo">
-                                <?php
-                                $svg = file_get_contents($logo);
-                                echo $svg;
-                                ?>
+                            <div class="w-full flex justify-center lg:block">
+                                <div class="logo">
+                                    <?php
+                                    $svg = file_get_contents($logo);
+                                    echo $svg;
+                                    ?>
+                                </div>
                             </div>
 
                             <div class="mt-2 text-EllGrayLight">

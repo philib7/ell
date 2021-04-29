@@ -54,11 +54,14 @@ module.exports = {
         },
         colors: {
           EllGrayLight: '#727380',
-          EllGrayVeryLight: '#F1F2FA'
+          EllGrayVeryLight: '#F1F2FA',
+          EllGraDark: '#53556A'
         },
         spacing: {},
         borderRadius: {},
         inset: {
+          '1/4': '25%',
+          '1/3': '33%',
           "1/2": '50%',
         },
         minHeight: {}
