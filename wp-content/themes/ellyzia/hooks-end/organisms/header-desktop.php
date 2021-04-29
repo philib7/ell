@@ -85,7 +85,7 @@ function ell_header_desktop($logo) {
                             ?>
 
                             <?php
-                            if ( $menuitems[ $count + 1 ]->menu_item_parent != $parent_id ):
+                            if ( isset($menuitems[ $count + 1 ]->menu_item_parent) && $menuitems[ $count + 1 ]->menu_item_parent != $parent_id):
                                 echo '</li>';
                                 $submenu = false;
                             endif;

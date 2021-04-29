@@ -83,6 +83,9 @@ get_header(); ?>
                     <div>
                         <button>Rechercher</button>
                     </div>
+                    <div>
+                        <button type="reset">Réinitialiser</button>
+                    </div>
                 </form>
             </div>
         </div>
@@ -100,7 +103,6 @@ get_header(); ?>
                         <div class="text-lg font-semibold text-EllGraDark tracking-widest">Ondes</div>
                         <div class="leading-5 tracking-wider">Or jaune et Or blanc</div>
                         <div class="leading-5 tracking-wider">Moyen modèle</div>
-                        <div class="text-sm font-bold mt-4 text-EllGraDark tracking-widest">1 450 €</div>
                     </a>
                 </div>
 
@@ -113,7 +115,6 @@ get_header(); ?>
                         <div class="text-lg font-semibold text-EllGraDark tracking-widest">Ondes</div>
                         <div class="leading-5 tracking-wider">Or jaune et Or blanc</div>
                         <div class="leading-5 tracking-wider">Moyen modèle</div>
-                        <div class="text-sm font-bold mt-4 text-EllGraDark tracking-widest">1 450 €</div>
                     </a>
                 </div>
 
@@ -126,7 +127,6 @@ get_header(); ?>
                         <div class="text-lg font-semibold text-EllGraDark tracking-widest">Ondes</div>
                         <div class="leading-5 tracking-wider">Or jaune et Or blanc</div>
                         <div class="leading-5 tracking-wider">Moyen modèle</div>
-                        <div class="text-sm font-bold mt-4 text-EllGraDark tracking-widest">1 450 €</div>
                     </a>
                 </div>
 
@@ -140,7 +140,7 @@ get_header(); ?>
                             <div class="text-lg font-semibold text-EllGraDark tracking-widest">Ondes</div>
                             <div class="leading-5 tracking-wider">Or jaune et Or blanc</div>
                             <div class="leading-5 tracking-wider">Moyen modèle</div>
-                            <div class="text-sm font-bold mt-4 text-EllGraDark tracking-widest">1 450 €</div>
+
                         </a>
                     </div>
 
@@ -153,7 +153,7 @@ get_header(); ?>
                             <div class="text-lg font-semibold text-EllGraDark tracking-widest">Ondes</div>
                             <div class="leading-5 tracking-wider">Or jaune et Or blanc</div>
                             <div class="leading-5 tracking-wider">Moyen modèle</div>
-                            <div class="text-sm font-bold mt-4 text-EllGraDark tracking-widest">1 450 €</div>
+
                         </a>
                     </div>
 
@@ -166,7 +166,7 @@ get_header(); ?>
                             <div class="text-lg font-semibold text-EllGraDark tracking-widest">Ondes</div>
                             <div class="leading-5 tracking-wider">Or jaune et Or blanc</div>
                             <div class="leading-5 tracking-wider">Moyen modèle</div>
-                            <div class="text-sm font-bold mt-4 text-EllGraDark tracking-widest">1 450 €</div>
+
                         </a>
                     </div>
                     <div class="w-full md:w-1/2 lg:w-1/3 mt-16 pl-10">
@@ -178,20 +178,7 @@ get_header(); ?>
                             <div class="text-lg font-semibold text-EllGraDark tracking-widest">Ondes</div>
                             <div class="leading-5 tracking-wider">Or jaune et Or blanc</div>
                             <div class="leading-5 tracking-wider">Moyen modèle</div>
-                            <div class="text-sm font-bold mt-4 text-EllGraDark tracking-widest">1 450 €</div>
-                        </a>
-                    </div>
 
-                    <div class="w-full md:w-1/2 lg:w-1/3 mt-16 pl-10">
-                        <div class="bg-EllGrayVeryLight flex justify-center items-center py-4">
-                            <img src="<?php echo $collier; ?>" alt="">
-                        </div>
-
-                        <a href="#" class="flex flex-col justify-center items-center mt-4 text-EllGrayLight">
-                            <div class="text-lg font-semibold text-EllGraDark tracking-widest">Ondes</div>
-                            <div class="leading-5 tracking-wider">Or jaune et Or blanc</div>
-                            <div class="leading-5 tracking-wider">Moyen modèle</div>
-                            <div class="text-sm font-bold mt-4 text-EllGraDark tracking-widest">1 450 €</div>
                         </a>
                     </div>
 
@@ -204,7 +191,20 @@ get_header(); ?>
                             <div class="text-lg font-semibold text-EllGraDark tracking-widest">Ondes</div>
                             <div class="leading-5 tracking-wider">Or jaune et Or blanc</div>
                             <div class="leading-5 tracking-wider">Moyen modèle</div>
-                            <div class="text-sm font-bold mt-4 text-EllGraDark tracking-widest">1 450 €</div>
+
+                        </a>
+                    </div>
+
+                    <div class="w-full md:w-1/2 lg:w-1/3 mt-16 pl-10">
+                        <div class="bg-EllGrayVeryLight flex justify-center items-center py-4">
+                            <img src="<?php echo $collier; ?>" alt="">
+                        </div>
+
+                        <a href="#" class="flex flex-col justify-center items-center mt-4 text-EllGrayLight">
+                            <div class="text-lg font-semibold text-EllGraDark tracking-widest">Ondes</div>
+                            <div class="leading-5 tracking-wider">Or jaune et Or blanc</div>
+                            <div class="leading-5 tracking-wider">Moyen modèle</div>
+
                         </a>
                     </div>
 
@@ -232,7 +232,7 @@ get_header(); ?>
                                     <div class="text-lg font-semibold text-EllGraDark tracking-widest">Ondes</div>
                                     <div class="leading-5 tracking-wider">Or jaune et Or blanc</div>
                                     <div class="leading-5 tracking-wider">Moyen modèle</div>
-                                    <div class="text-sm font-bold mt-4 text-EllGraDark tracking-widest">1 450 €</div>
+
                                 </a>
                             </div>
 
@@ -245,7 +245,7 @@ get_header(); ?>
                                     <div class="text-lg font-semibold text-EllGraDark tracking-widest">Ondes</div>
                                     <div class="leading-5 tracking-wider">Or jaune et Or blanc</div>
                                     <div class="leading-5 tracking-wider">Moyen modèle</div>
-                                    <div class="text-sm font-bold mt-4 text-EllGraDark tracking-widest">1 450 €</div>
+
                                 </a>
                             </div>
 
@@ -258,7 +258,7 @@ get_header(); ?>
                                     <div class="text-lg font-semibold text-EllGraDark tracking-widest">Ondes</div>
                                     <div class="leading-5 tracking-wider">Or jaune et Or blanc</div>
                                     <div class="leading-5 tracking-wider">Moyen modèle</div>
-                                    <div class="text-sm font-bold mt-4 text-EllGraDark tracking-widest">1 450 €</div>
+
                                 </a>
                             </div>
 
@@ -271,7 +271,7 @@ get_header(); ?>
                                     <div class="text-lg font-semibold text-EllGraDark tracking-widest">Ondes</div>
                                     <div class="leading-5 tracking-wider">Or jaune et Or blanc</div>
                                     <div class="leading-5 tracking-wider">Moyen modèle</div>
-                                    <div class="text-sm font-bold mt-4 text-EllGraDark tracking-widest">1 450 €</div>
+
                                 </a>
                             </div>
                         </div>

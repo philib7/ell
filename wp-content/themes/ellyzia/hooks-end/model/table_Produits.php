@@ -22,6 +22,33 @@ function ell_get_products() {
     }
 }
 
+function ell_get_products_by_collection($id) {
+    $agent_query = new WP_Query(
+        array (
+            'post_type' => array (
+                'produit'
+            ),
+            'meta_query' => array (
+                array (
+                    'key' => 'collection',
+                    'value' => $id,
+                    'compare' => 'like',
+                )
+            ),
+            'posts_per_page' => -1
+        )
+    );
+
+    /* Restore original Post Data */
+    wp_reset_postdata();
+
+    if (isset($agent_query->posts)) {
+        return $agent_query->posts;
+    } else {
+        return;
+    }
+}
+
 // récupération du type d'un produit
 function ell_get_type_byProduct_id ($id) {
     if ($id) {
