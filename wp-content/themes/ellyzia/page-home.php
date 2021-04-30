@@ -70,10 +70,10 @@ get_header(); ?>
 
                 // on every third result, set the variable value
                 if(++$counter % 3 === 0) {
-                    card_large($link, $titre, $image['url']);
+                    card_large($link, $titre, $image['url'], 'Collection' ,'Découvrir la collection');
 
                 } else {
-                    card_small($link, $titre, $image['url']);
+                    card_small($link, $titre, $image['url'], 'Collection', 'Découvrir la collection');
                 }
                 ?>
                 <!-- Left -->

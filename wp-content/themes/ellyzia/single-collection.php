@@ -8,10 +8,11 @@ $homeHouse = get_template_directory_uri().'/BuildFrontAsset/dist/images/capture.
 
 $id = get_the_id();
 
-
 $name = get_the_title();
 $image = ell_get_image_page_bycollection_id($id);
 $image_url = null;
+
+$models = ell_get_models_by_collection($id);
 
 if (isset($image['url'])) {
     $image_url = $image['url'];
@@ -39,8 +40,32 @@ get_header(); ?>
             </div>
         </div>
 
+        <div class="md:flex justify-between flex-wrap">
+            <?php
+            $counter = 0;
+            foreach ($models as $key => $value) :
+                $link = get_home_url().'/joaillerie?collect='.$id.'&ensemble='.$value->ID;
+                $titre = ell_get_titre_model_id($value->ID);
+                $image = ell_get_image_model_id($value->ID);
+
+                // reset the variable
+                $class = '';
+
+                // on every third result, set the variable value
+                if(++$counter % 3 === 0) {
+                    card_large($link, $titre, $image['url'], "L'ensemble" ,"Découvrir l'ensemble");
+
+                } else {
+                    card_small($link, $titre, $image['url'], "L'ensemble" ,"Découvrir l'ensemble");
+                }
+                ?>
+                <!-- Left -->
+
+            <?php endforeach; ?>
+        </div>
+
         <!-- La Maison Bloc -->
-        <a class="flex flex-col lg:flex-row-reverse items-center justify-between bg-EllGrayVeryLight card mt-8 md:mt-16" href="#">
+        <a class="flex flex-col lg:flex-row-reverse items-center justify-between bg-EllGrayVeryLight card mt-8 md:mt-16" href="<?php echo get_home_url().'/la-maison'; ?>">
             <div class="text-center text-EllGrayLight lg:w-1/2 w-full flex flex-col items-center justify-center px-4 pt-4 lg:pt-0">
                 <div class="lg:text-7xl text-4xl">La Maison</div>
 

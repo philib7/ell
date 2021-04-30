@@ -9,6 +9,37 @@ $cloud2 = get_template_directory_uri().'/BuildFrontAsset/dist/images/bigcloud2.p
 $homeCollection = get_template_directory_uri().'/BuildFrontAsset/dist/images/homecollection.png';
 $homeHouse = get_template_directory_uri().'/BuildFrontAsset/dist/images/capture.png';
 $collier = get_template_directory_uri().'/BuildFrontAsset/dist/images/collier.png';
+
+$products_header = ell_get_products('3');
+$products_principal = ell_get_products('4', '3');
+
+// Début field filter
+$fields_type = get_field_object('field_60800db83a168');
+$fields_matiere = get_field_object('field_60801062fa484');
+$fields_pierre = get_field_object('field_608010d4fa485');
+
+// TODO
+// Gestion de la Taille
+//On récupère la liste de tout les produits
+// $all_product = ell_get_products('-1');
+// // On défini deux tableaux temporaires pour récupèrer toutes les tailles de tout les produits
+// $array_taille = array();
+// $array_taille_final = array();
+// // Si on récupère un tableau alors au moins un produit a une taille
+// if (is_array($all_product)):
+//     foreach ($all_product as $key => $value) {
+//         // On stock toutes les tailles dans le tableau
+//         $array_taille[] = ell_get_taille_byProduct_id($value->ID);
+//     }
+
+//     foreach ($array_taille as $key => $value) {
+//         if (is_array($value)) {
+//             $array_taille_final = array_merge($array_taille_final, $value);
+//         }
+//     }
+// endif;
+
+
 //gradient-RoseBlue
 get_header(); ?>
 
@@ -43,22 +74,59 @@ get_header(); ?>
 
                     <div class="text-EllGrayLight tracking-widest uppercase mt-4">
                         <select name="type" id="" class="pr-8 w-full">
-                            <option value="" checked>Type</option>
-                            <option value="test">test</option>
+                            <?php
+                            if (isset($fields_type) && is_array($fields_type)) {
+                                ?>
+                                <option value="" checked>Type</option>
+                                <?php
+                                foreach ($fields_type["choices"] as $key => $value) {
+                                ?>
+                                    <option value="<?php echo $key; ?>">
+                                        <?php echo $value; ?>
+                                    </option>
+                                <?php
+                                }
+                            }
+                            ?>
                         </select>
+                    </div>
+
+                    <div class="text-EllGrayLight uppercase mt-4 flex flex-wrap items-center w-48 -ml-2">
+                        <?php
+                        if (isset($fields_matiere) && is_array($fields_matiere)) {
+                            ?>
+                            <?php
+                            foreach ($fields_matiere["choices"] as $key => $value) {
+                            ?>
+                                <label id="<?php echo $key; ?>" value="<?php echo $key; ?>" class="flex items-center ml-2 mb-0 leading-7">
+                                    <input class="hidden checkbox-custom" type="checkbox" id="<?php echo $key; ?>">
+
+                                    <div class="text-xs label-custom">
+                                        <?php echo $value; ?>
+                                    </div>
+                                </label>
+                            <?php
+                            }
+                        }
+                        ?>
                     </div>
 
                     <div class="text-EllGrayLight tracking-widest uppercase mt-4">
                         <select name="" id="" class="pr-8 w-full">
-                            <option value="" checked>Matière</option>
-                            <option value="">test</option>
-                        </select>
-                    </div>
-
-                    <div class="text-EllGrayLight tracking-widest uppercase mt-4">
-                        <select name="" id="" class="pr-8 w-full">
-                            <option value="" checked>Pierre</option>
-                            <option value="">test</option>
+                            <?php
+                            if (isset($fields_pierre) && is_array($fields_pierre)) {
+                                ?>
+                                 <option value="" checked>Pierre</option>
+                                <?php
+                                foreach ($fields_pierre["choices"] as $key => $value) {
+                                ?>
+                                    <option value="<?php echo $key; ?>">
+                                        <?php echo $value; ?>
+                                    </option>
+                                <?php
+                                }
+                            }
+                            ?>
                         </select>
                     </div>
 
@@ -69,22 +137,42 @@ get_header(); ?>
                         </select>
                     </div>
 
-                    <div class="text-EllGrayLight tracking-widest uppercase mt-4">
+                    <!-- <div class="text-EllGrayLight tracking-widest uppercase mt-4">
                         Taille :
-                    </div>
+                        <?php
+                        if (isset($array_taille_final) && is_array($array_taille_final)) {
+                            ?>
+                            <?php
+                            foreach ($array_taille_final as $key => $value) {
+                            ?>
+                                <label id="taille-<?php echo $value['taille']; ?>" value="<?php echo $value['taille']; ?>" class="flex items-center ml-2 mb-0 leading-7">
+                                    <input class="hidden checkbox-custom" type="checkbox" id="taille-<?php echo $value['taille']; ?>">
 
-                    <div class="text-EllGrayLight mt-4">
+                                    <div class="text-xs label-custom">
+                                        <?php echo $value['taille']; ?>
+                                    </div>
+                                </label>
+                            <?php
+                            }
+                        }
+                        ?>
+                    </div> -->
+
+                    <!-- <div class="text-EllGrayLight mt-4">
                         <label for="stock" class="flex items-center">
                             <div>En stock</div>
                             <input type="checkbox" id="stock" class="ml-4">
                         </label>
-                    </div>
+                    </div> -->
 
-                    <div>
-                        <button>Rechercher</button>
-                    </div>
-                    <div>
-                        <button type="reset">Réinitialiser</button>
+                    <div class="flex mt-4">
+                        <div>
+                            <button>Rechercher</button>
+                        </div>
+
+                        <div class="ml-2">
+                            <button type="reset">Réinitialiser</button>
+                        </div>
                     </div>
                 </form>
             </div>
@@ -94,121 +182,16 @@ get_header(); ?>
     <div class="container top-0 relative">
         <div class="pb-56">
             <div class="flex flex-wrap -ml-10">
-                <div class="w-full md:w-1/2 lg:w-1/3 mt-16 pl-10">
-                    <div class="bg-EllGrayVeryLight flex justify-center items-center py-4">
-                        <img src="<?php echo $collier; ?>" alt="">
-                    </div>
 
-                    <a href="#" class="flex flex-col justify-center items-center mt-4 text-EllGrayLight">
-                        <div class="text-lg font-semibold text-EllGraDark tracking-widest">Ondes</div>
-                        <div class="leading-5 tracking-wider">Or jaune et Or blanc</div>
-                        <div class="leading-5 tracking-wider">Moyen modèle</div>
-                    </a>
-                </div>
+                <?php if (isset($products_header) && is_array($products_header)):
+                    card_product($products_header, 'md:w-1/2 lg:w-1/3');
+                endif; ?>
 
-                <div class="w-full md:w-1/2 lg:w-1/3 mt-16 pl-10">
-                    <div class="bg-EllGrayVeryLight flex justify-center items-center py-4">
-                        <img src="<?php echo $collier; ?>" alt="">
-                    </div>
-
-                    <a href="#" class="flex flex-col justify-center items-center mt-4 text-EllGrayLight">
-                        <div class="text-lg font-semibold text-EllGraDark tracking-widest">Ondes</div>
-                        <div class="leading-5 tracking-wider">Or jaune et Or blanc</div>
-                        <div class="leading-5 tracking-wider">Moyen modèle</div>
-                    </a>
-                </div>
-
-                <div class="w-full md:w-1/2 lg:w-1/3 mt-16 pl-10">
-                    <div class="bg-EllGrayVeryLight flex justify-center items-center py-4">
-                        <img src="<?php echo $collier; ?>" alt="">
-                    </div>
-
-                    <a href="#" class="flex flex-col justify-center items-center mt-4 text-EllGrayLight">
-                        <div class="text-lg font-semibold text-EllGraDark tracking-widest">Ondes</div>
-                        <div class="leading-5 tracking-wider">Or jaune et Or blanc</div>
-                        <div class="leading-5 tracking-wider">Moyen modèle</div>
-                    </a>
-                </div>
-
-                <?php if (wp_is_mobile()): ?>
-                    <div class="w-full md:w-1/2 lg:w-1/3 mt-16 pl-10">
-                        <div class="bg-EllGrayVeryLight flex justify-center items-center py-4">
-                            <img src="<?php echo $collier; ?>" alt="">
-                        </div>
-
-                        <a href="#" class="flex flex-col justify-center items-center mt-4 text-EllGrayLight">
-                            <div class="text-lg font-semibold text-EllGraDark tracking-widest">Ondes</div>
-                            <div class="leading-5 tracking-wider">Or jaune et Or blanc</div>
-                            <div class="leading-5 tracking-wider">Moyen modèle</div>
-
-                        </a>
-                    </div>
-
-                    <div class="w-full md:w-1/2 lg:w-1/3 mt-16 pl-10">
-                        <div class="bg-EllGrayVeryLight flex justify-center items-center py-4">
-                            <img src="<?php echo $collier; ?>" alt="">
-                        </div>
-
-                        <a href="#" class="flex flex-col justify-center items-center mt-4 text-EllGrayLight">
-                            <div class="text-lg font-semibold text-EllGraDark tracking-widest">Ondes</div>
-                            <div class="leading-5 tracking-wider">Or jaune et Or blanc</div>
-                            <div class="leading-5 tracking-wider">Moyen modèle</div>
-
-                        </a>
-                    </div>
-
-                    <div class="w-full md:w-1/2 lg:w-1/3 mt-16 pl-10">
-                        <div class="bg-EllGrayVeryLight flex justify-center items-center py-4">
-                            <img src="<?php echo $collier; ?>" alt="">
-                        </div>
-
-                        <a href="#" class="flex flex-col justify-center items-center mt-4 text-EllGrayLight">
-                            <div class="text-lg font-semibold text-EllGraDark tracking-widest">Ondes</div>
-                            <div class="leading-5 tracking-wider">Or jaune et Or blanc</div>
-                            <div class="leading-5 tracking-wider">Moyen modèle</div>
-
-                        </a>
-                    </div>
-                    <div class="w-full md:w-1/2 lg:w-1/3 mt-16 pl-10">
-                        <div class="bg-EllGrayVeryLight flex justify-center items-center py-4">
-                            <img src="<?php echo $collier; ?>" alt="">
-                        </div>
-
-                        <a href="#" class="flex flex-col justify-center items-center mt-4 text-EllGrayLight">
-                            <div class="text-lg font-semibold text-EllGraDark tracking-widest">Ondes</div>
-                            <div class="leading-5 tracking-wider">Or jaune et Or blanc</div>
-                            <div class="leading-5 tracking-wider">Moyen modèle</div>
-
-                        </a>
-                    </div>
-
-                    <div class="w-full md:w-1/2 lg:w-1/3 mt-16 pl-10">
-                        <div class="bg-EllGrayVeryLight flex justify-center items-center py-4">
-                            <img src="<?php echo $collier; ?>" alt="">
-                        </div>
-
-                        <a href="#" class="flex flex-col justify-center items-center mt-4 text-EllGrayLight">
-                            <div class="text-lg font-semibold text-EllGraDark tracking-widest">Ondes</div>
-                            <div class="leading-5 tracking-wider">Or jaune et Or blanc</div>
-                            <div class="leading-5 tracking-wider">Moyen modèle</div>
-
-                        </a>
-                    </div>
-
-                    <div class="w-full md:w-1/2 lg:w-1/3 mt-16 pl-10">
-                        <div class="bg-EllGrayVeryLight flex justify-center items-center py-4">
-                            <img src="<?php echo $collier; ?>" alt="">
-                        </div>
-
-                        <a href="#" class="flex flex-col justify-center items-center mt-4 text-EllGrayLight">
-                            <div class="text-lg font-semibold text-EllGraDark tracking-widest">Ondes</div>
-                            <div class="leading-5 tracking-wider">Or jaune et Or blanc</div>
-                            <div class="leading-5 tracking-wider">Moyen modèle</div>
-
-                        </a>
-                    </div>
-
-                <?php endif; ?>
+                <?php if (wp_is_mobile()):
+                    if (isset($products_principal) && is_array($products_principal)):
+                        card_product($products_principal, 'md:w-1/2 lg:w-1/3');
+                    endif;
+                endif; ?>
 
                 <!-- LAST FIRST -->
                 <?php if (!wp_is_mobile()): ?>
@@ -217,63 +200,17 @@ get_header(); ?>
                             <div class="pl-10 mt-16 relative overflow-hidden h-32 md:h-64 lg:h-full">
                                 <div class="sky-card h-80p"></div>
                                 <div class="sky2-card h-80p"></div>
-                                <!-- Nuage 1 -->
+
                                 <img src="<?php echo $cloud1; ?>" alt="" class="absolute cloud-card">
                             </div>
                         </div>
 
                         <div class="w-full lg:w-2/3 flex flex-wrap content-start">
-                            <div class="w-full md:w-full lg:w-1/2 mt-16 pl-10">
-                                <div class="bg-EllGrayVeryLight flex justify-center items-center py-4">
-                                    <img src="<?php echo $collier; ?>" alt="">
-                                </div>
+                            <?php
+                            if (isset($products_principal) && is_array($products_principal)):
+                                card_product($products_principal, 'md:w-1/2 lg:w-1/2');
+                            endif; ?>
 
-                                <a href="#" class="flex flex-col justify-center items-center mt-4 text-EllGrayLight">
-                                    <div class="text-lg font-semibold text-EllGraDark tracking-widest">Ondes</div>
-                                    <div class="leading-5 tracking-wider">Or jaune et Or blanc</div>
-                                    <div class="leading-5 tracking-wider">Moyen modèle</div>
-
-                                </a>
-                            </div>
-
-                            <div class="w-full md:w-full lg:w-1/2 mt-16 pl-10">
-                                <div class="bg-EllGrayVeryLight flex justify-center items-center py-4">
-                                    <img src="<?php echo $collier; ?>" alt="">
-                                </div>
-
-                                <a href="#" class="flex flex-col justify-center items-center mt-4 text-EllGrayLight">
-                                    <div class="text-lg font-semibold text-EllGraDark tracking-widest">Ondes</div>
-                                    <div class="leading-5 tracking-wider">Or jaune et Or blanc</div>
-                                    <div class="leading-5 tracking-wider">Moyen modèle</div>
-
-                                </a>
-                            </div>
-
-                            <div class="w-full md:w-full lg:w-1/2 mt-16 pl-10">
-                                <div class="bg-EllGrayVeryLight flex justify-center items-center py-4">
-                                    <img src="<?php echo $collier; ?>" alt="">
-                                </div>
-
-                                <a href="#" class="flex flex-col justify-center items-center mt-4 text-EllGrayLight">
-                                    <div class="text-lg font-semibold text-EllGraDark tracking-widest">Ondes</div>
-                                    <div class="leading-5 tracking-wider">Or jaune et Or blanc</div>
-                                    <div class="leading-5 tracking-wider">Moyen modèle</div>
-
-                                </a>
-                            </div>
-
-                            <div class="w-full md:w-full lg:w-1/2 mt-16 pl-10">
-                                <div class="bg-EllGrayVeryLight flex justify-center items-center py-4">
-                                    <img src="<?php echo $collier; ?>" alt="">
-                                </div>
-
-                                <a href="#" class="flex flex-col justify-center items-center mt-4 text-EllGrayLight">
-                                    <div class="text-lg font-semibold text-EllGraDark tracking-widest">Ondes</div>
-                                    <div class="leading-5 tracking-wider">Or jaune et Or blanc</div>
-                                    <div class="leading-5 tracking-wider">Moyen modèle</div>
-
-                                </a>
-                            </div>
                         </div>
                     </div>
                 <?php endif; ?>
@@ -295,7 +232,7 @@ get_header(); ?>
     <div class="container max-width-1668 relative z-10">
 
         <!-- La Maison Bloc -->
-        <a class="flex flex-col lg:flex-row items-center justify-between bg-EllGrayVeryLight card mt-8 md:mt-16" href="#">
+        <a class="flex flex-col lg:flex-row items-center justify-between bg-EllGrayVeryLight card mt-8 md:mt-16" href="<?php echo get_home_url().'/la-maison'; ?>">
             <div class="text-center text-EllGrayLight lg:w-1/2 w-full flex flex-col items-center justify-center px-4 pt-4 lg:pt-0">
                 <div class="lg:text-7xl text-4xl">La Maison</div>
 
