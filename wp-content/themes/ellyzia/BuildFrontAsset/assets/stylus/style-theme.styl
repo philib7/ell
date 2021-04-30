@@ -18,6 +18,10 @@
   width 60px
   height 4px
 
+.checkbox-custom:checked + .label-custom
+  color black
+  font-weight bold
+
 .element-list
   display flex
   justify-content space-between
@@ -145,53 +149,53 @@
   animation: firmament-2 50s linear infinite;
 }
 @keyframes firmament-1 {
-  0% {
+  100% {
     background: linear-gradient(to bottom, #040911 2%, #070e1b 31%, #0b182b 56%, #13253c 75%, #1c3249 89%, #243a4c 99%);
   }
-  25% {
+  75% {
     background: linear-gradient(to bottom, #695371 2%, #9b6368 31%, #bc7161 56%, #ab5f53 75%, #944d47 89%, #8a4541 99%);
   }
   50% {
     background: linear-gradient(to bottom, #50a7fd 2%, #5cb2fe 31%, #6bbdfe 56%, #79c8fe 75%, #85d1fe 89%, #8dd6fe 99%);
   }
-  75% {
+  25% {
     background: linear-gradient(to bottom, #012254 2%, #02387b 31%, #1e59a6 56%, #6379bb 75%, #7b537f 89%, #253668 99%);
   }
-  100% {
+  0% {
     background: linear-gradient(to bottom, #040911 2%, #070e1b 31%, #0b182b 56%, #13253c 75%, #1c3249 89%, #243a4c 99%);
   }
 }
 @keyframes firmament-2 {
-  0% {
+  100%{
     background: linear-gradient(to bottom, #010104 2%, #0a0a12 31%, #1b1a1e 56%, #302822 75%, #4e2c0e 89%, #5e1801 99%);
     opacity: 0;
   }
-  12.5% {
+  87.5%{
     background: linear-gradient(to bottom, #010104 2%, #0a0a12 31%, #1b1a1e 56%, #302822 75%, #4e2c0e 89%, #5e1801 99%);
     opacity: 1;
   }
-  25% {
+  75%{
     opacity: 0;
   }
-  37.5% {
+  62.5%{
     background: linear-gradient(to bottom, #898989 2%, #a3948b 31%, #997c71 56%, #7b5d5b 75%, #5a464e 89%, #403743 99%);
     opacity: 1;
   }
   50% {
     opacity: 0;
   }
-  62.5% {
+  37.5%{
     background: linear-gradient(to bottom, #2b4850 2%, #4b6f7e 31%, #709da4 56%, #aebd9a 75%, #c8904d 89%, #4a3a30 99%);
     opacity: 1;
   }
-  75% {
+  25%{
     opacity: 0;
   }
-  87.5% {
+  12.5%{
     background: linear-gradient(to bottom, #1c3a62 2%, #1e3e68 31%, #214470 56%, #244a7b 75%, #285184 89%, #2b558b 99%);
     opacity: 1;
   }
-  100% {
+  0% {
     background: linear-gradient(to bottom, #1c3a62 2%, #1e3e68 31%, #214470 56%, #244a7b 75%, #285184 89%, #2b558b 99%);
     opacity: 0;
   }
