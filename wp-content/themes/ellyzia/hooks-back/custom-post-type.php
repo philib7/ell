@@ -45,201 +45,6 @@ function produit_init() {
     register_post_type( 'produit', $args );
 }
 
-add_action( 'init', 'clients_init' );
-function clients_init() {
-    $labels = array (
-        'name'               => _x( 'clients', 'post type general name', 'your-plugin-textdomain' ),
-        'singular_name'      => _x( 'client', 'post type singular name', 'your-plugin-textdomain' ),
-        'menu_name'          => _x( 'clients', 'admin menu', 'your-plugin-textdomain' ),
-        'name_admin_bar'     => _x( 'client', 'add new on admin bar', 'your-plugin-textdomain' ),
-        'add_new'            => _x( 'Ajouter un client', 'client', 'your-plugin-textdomain' ),
-        'add_new_item'       => __( 'Ajouter nouvel client', 'your-plugin-textdomain' ),
-        'new_item'           => __( 'Nouvel client', 'your-plugin-textdomain' ),
-        'edit_item'          => __( 'Editer un client', 'your-plugin-textdomain' ),
-        'view_item'          => __( "Voir client", 'your-plugin-textdomain' ),
-        'all_items'          => __( 'Tout les clients', 'your-plugin-textdomain' ),
-        'search_items'       => __( 'Rechercher clients', 'your-plugin-textdomain' ),
-        'parent_item_colon'  => __( 'Parent clients :', 'your-plugin-textdomain' ),
-        'not_found'          => __( 'Aucun client trouvé.', 'your-plugin-textdomain' ),
-        'not_found_in_trash' => __( 'Aucun client dans la corbeille.', 'your-plugin-textdomain' )
-    );
-
-    $args = array (
-        'labels'             => $labels,
-        'description'        => __( 'Description.', 'your-plugin-textdomain' ),
-        'public'             => true,
-        'publicly_queryable' => true,
-        'show_ui'            => true,
-        'show_in_menu'       => true,
-        'query_var'          => true,
-        'rewrite'            => array( 'slug' => 'client' ),
-        'capability_type'    => 'post',
-        'has_archive'        => true,
-        'hierarchical'       => true,
-        'menu_position'      => 70,
-        'menu_icon'          => 'dashicons-admin-users', // https://developer.wordpress.org/resource/dashicons/#thumbs-down
-        'supports'           => array( 'title')
-    );
-
-    register_post_type( 'client', $args );
-}
-
-add_action( 'init', 'commandes_init' );
-function commandes_init() {
-    $labels = array (
-        'name'               => _x( 'commandes', 'post type general name', 'your-plugin-textdomain' ),
-        'singular_name'      => _x( 'commande', 'post type singular name', 'your-plugin-textdomain' ),
-        'menu_name'          => _x( 'commandes', 'admin menu', 'your-plugin-textdomain' ),
-        'name_admin_bar'     => _x( 'commande', 'add new on admin bar', 'your-plugin-textdomain' ),
-        'add_new'            => _x( 'Ajouter un commande', 'commande', 'your-plugin-textdomain' ),
-        'add_new_item'       => __( 'Ajouter nouvel commande', 'your-plugin-textdomain' ),
-        'new_item'           => __( 'Nouvel commande', 'your-plugin-textdomain' ),
-        'edit_item'          => __( 'Editer un commande', 'your-plugin-textdomain' ),
-        'view_item'          => __( "Voir commande", 'your-plugin-textdomain' ),
-        'all_items'          => __( 'Tout les commandes', 'your-plugin-textdomain' ),
-        'search_items'       => __( 'Rechercher commandes', 'your-plugin-textdomain' ),
-        'parent_item_colon'  => __( 'Parent commandes :', 'your-plugin-textdomain' ),
-        'not_found'          => __( 'Aucun commande trouvé.', 'your-plugin-textdomain' ),
-        'not_found_in_trash' => __( 'Aucun commande dans la corbeille.', 'your-plugin-textdomain' )
-    );
-
-    $args = array (
-        'labels'             => $labels,
-        'description'        => __( 'Description.', 'your-plugin-textdomain' ),
-        'public'             => true,
-        'publicly_queryable' => true,
-        'show_ui'            => true,
-        'show_in_menu'       => true,
-        'query_var'          => true,
-        'rewrite'            => array( 'slug' => 'commande' ),
-        'capability_type'    => 'post',
-        'has_archive'        => true,
-        'hierarchical'       => true,
-        'menu_position'      => 70,
-        'menu_icon'          => 'dashicons-admin-users', // https://developer.wordpress.org/resource/dashicons/#thumbs-down
-        'supports'           => array( 'title')
-    );
-
-    register_post_type( 'commande', $args );
-}
-
-add_action( 'init', 'cmdproduits_init' );
-function cmdproduits_init() {
-    $labels = array (
-        'name'               => _x( 'cmdproduits', 'post type general name', 'your-plugin-textdomain' ),
-        'singular_name'      => _x( 'cmdproduit', 'post type singular name', 'your-plugin-textdomain' ),
-        'menu_name'          => _x( 'cmdproduits', 'admin menu', 'your-plugin-textdomain' ),
-        'name_admin_bar'     => _x( 'cmdproduit', 'add new on admin bar', 'your-plugin-textdomain' ),
-        'add_new'            => _x( 'Ajouter un cmdproduit', 'cmdproduit', 'your-plugin-textdomain' ),
-        'add_new_item'       => __( 'Ajouter nouvel cmdproduit', 'your-plugin-textdomain' ),
-        'new_item'           => __( 'Nouvel cmdproduit', 'your-plugin-textdomain' ),
-        'edit_item'          => __( 'Editer un cmdproduit', 'your-plugin-textdomain' ),
-        'view_item'          => __( "Voir cmdproduit", 'your-plugin-textdomain' ),
-        'all_items'          => __( 'Tout les cmdproduits', 'your-plugin-textdomain' ),
-        'search_items'       => __( 'Rechercher cmdproduits', 'your-plugin-textdomain' ),
-        'parent_item_colon'  => __( 'Parent cmdproduits :', 'your-plugin-textdomain' ),
-        'not_found'          => __( 'Aucun cmdproduit trouvé.', 'your-plugin-textdomain' ),
-        'not_found_in_trash' => __( 'Aucun cmdproduit dans la corbeille.', 'your-plugin-textdomain' )
-    );
-
-    $args = array (
-        'labels'             => $labels,
-        'description'        => __( 'Description.', 'your-plugin-textdomain' ),
-        'public'             => true,
-        'publicly_queryable' => true,
-        'show_ui'            => true,
-        'show_in_menu'       => true,
-        'query_var'          => true,
-        'rewrite'            => array( 'slug' => 'cmdproduit' ),
-        'capability_type'    => 'post',
-        'has_archive'        => true,
-        'hierarchical'       => true,
-        'menu_position'      => 70,
-        'menu_icon'          => 'dashicons-admin-users', // https://developer.wordpress.org/resource/dashicons/#thumbs-down
-        'supports'           => array( 'title')
-    );
-
-    register_post_type( 'cmdproduit', $args );
-}
-
-add_action( 'init', 'paniers_init' );
-function paniers_init() {
-    $labels = array (
-        'name'               => _x( 'paniers', 'post type general name', 'your-plugin-textdomain' ),
-        'singular_name'      => _x( 'panier', 'post type singular name', 'your-plugin-textdomain' ),
-        'menu_name'          => _x( 'paniers', 'admin menu', 'your-plugin-textdomain' ),
-        'name_admin_bar'     => _x( 'panier', 'add new on admin bar', 'your-plugin-textdomain' ),
-        'add_new'            => _x( 'Ajouter un panier', 'panier', 'your-plugin-textdomain' ),
-        'add_new_item'       => __( 'Ajouter nouvel panier', 'your-plugin-textdomain' ),
-        'new_item'           => __( 'Nouvel panier', 'your-plugin-textdomain' ),
-        'edit_item'          => __( 'Editer un panier', 'your-plugin-textdomain' ),
-        'view_item'          => __( "Voir panier", 'your-plugin-textdomain' ),
-        'all_items'          => __( 'Tout les paniers', 'your-plugin-textdomain' ),
-        'search_items'       => __( 'Rechercher paniers', 'your-plugin-textdomain' ),
-        'parent_item_colon'  => __( 'Parent paniers :', 'your-plugin-textdomain' ),
-        'not_found'          => __( 'Aucun panier trouvé.', 'your-plugin-textdomain' ),
-        'not_found_in_trash' => __( 'Aucun panier dans la corbeille.', 'your-plugin-textdomain' )
-    );
-
-    $args = array (
-        'labels'             => $labels,
-        'description'        => __( 'Description.', 'your-plugin-textdomain' ),
-        'public'             => true,
-        'publicly_queryable' => true,
-        'show_ui'            => true,
-        'show_in_menu'       => true,
-        'query_var'          => true,
-        'rewrite'            => array( 'slug' => 'panier' ),
-        'capability_type'    => 'post',
-        'has_archive'        => true,
-        'hierarchical'       => true,
-        'menu_position'      => 70,
-        'menu_icon'          => 'dashicons-admin-users', // https://developer.wordpress.org/resource/dashicons/#thumbs-down
-        'supports'           => array( 'title')
-    );
-
-    register_post_type( 'panier', $args );
-}
-
-add_action( 'init', 'panierprods_init' );
-function panierprods_init() {
-    $labels = array (
-        'name'               => _x( 'panierprods', 'post type general name', 'your-plugin-textdomain' ),
-        'singular_name'      => _x( 'panierprod', 'post type singular name', 'your-plugin-textdomain' ),
-        'menu_name'          => _x( 'panierprods', 'admin menu', 'your-plugin-textdomain' ),
-        'name_admin_bar'     => _x( 'panierprod', 'add new on admin bar', 'your-plugin-textdomain' ),
-        'add_new'            => _x( 'Ajouter un panierprod', 'panierprod', 'your-plugin-textdomain' ),
-        'add_new_item'       => __( 'Ajouter nouvel panierprod', 'your-plugin-textdomain' ),
-        'new_item'           => __( 'Nouvel panierprod', 'your-plugin-textdomain' ),
-        'edit_item'          => __( 'Editer un panierprod', 'your-plugin-textdomain' ),
-        'view_item'          => __( "Voir panierprod", 'your-plugin-textdomain' ),
-        'all_items'          => __( 'Tout les panierprods', 'your-plugin-textdomain' ),
-        'search_items'       => __( 'Rechercher panierprods', 'your-plugin-textdomain' ),
-        'parent_item_colon'  => __( 'Parent panierprods :', 'your-plugin-textdomain' ),
-        'not_found'          => __( 'Aucun panierprod trouvé.', 'your-plugin-textdomain' ),
-        'not_found_in_trash' => __( 'Aucun panierprod dans la corbeille.', 'your-plugin-textdomain' )
-    );
-
-    $args = array (
-        'labels'             => $labels,
-        'description'        => __( 'Description.', 'your-plugin-textdomain' ),
-        'public'             => true,
-        'publicly_queryable' => true,
-        'show_ui'            => true,
-        'show_in_menu'       => true,
-        'query_var'          => true,
-        'rewrite'            => array( 'slug' => 'panierprod' ),
-        'capability_type'    => 'post',
-        'has_archive'        => true,
-        'hierarchical'       => true,
-        'menu_position'      => 70,
-        'menu_icon'          => 'dashicons-admin-users', // https://developer.wordpress.org/resource/dashicons/#thumbs-down
-        'supports'           => array( 'title')
-    );
-
-    register_post_type( 'panierprod', $args );
-}
-
 add_action( 'init', 'collection_init' );
 function collection_init() {
     $labels = array (
@@ -277,4 +82,43 @@ function collection_init() {
     );
 
     register_post_type( 'collection', $args );
+}
+
+add_action( 'init', 'model_init' );
+function model_init() {
+    $labels = array (
+        'name'               => _x( 'models', 'post type general name', 'your-plugin-textdomain' ),
+        'singular_name'      => _x( 'model', 'post type singular name', 'your-plugin-textdomain' ),
+        'menu_name'          => _x( 'models', 'admin menu', 'your-plugin-textdomain' ),
+        'name_admin_bar'     => _x( 'model', 'add new on admin bar', 'your-plugin-textdomain' ),
+        'add_new'            => _x( 'Ajouter un model', 'model', 'your-plugin-textdomain' ),
+        'add_new_item'       => __( 'Ajouter nouvel model', 'your-plugin-textdomain' ),
+        'new_item'           => __( 'Nouvel model', 'your-plugin-textdomain' ),
+        'edit_item'          => __( 'Editer un model', 'your-plugin-textdomain' ),
+        'view_item'          => __( "Voir l'model", 'your-plugin-textdomain' ),
+        'all_items'          => __( 'Tout les models', 'your-plugin-textdomain' ),
+        'search_items'       => __( 'Rechercher models', 'your-plugin-textdomain' ),
+        'parent_item_colon'  => __( 'Parent models :', 'your-plugin-textdomain' ),
+        'not_found'          => __( 'Aucun model trouvé.', 'your-plugin-textdomain' ),
+        'not_found_in_trash' => __( 'Aucun model dans la corbeille.', 'your-plugin-textdomain' )
+    );
+
+    $args = array (
+        'labels'             => $labels,
+        'description'        => __( 'Description.', 'your-plugin-textdomain' ),
+        'public'             => true,
+        'publicly_queryable' => true,
+        'show_ui'            => true,
+        'show_in_menu'       => true,
+        'query_var'          => true,
+        'rewrite'            => array( 'slug' => 'model' ),
+        'capability_type'    => 'post',
+        'has_archive'        => false,
+        'hierarchical'       => true,
+        'menu_position'      => 70,
+        'menu_icon'          => 'dashicons-admin-users', // https://developer.wordpress.org/resource/dashicons/#thumbs-down
+        'supports'           => array( 'title')
+    );
+
+    register_post_type( 'model', $args );
 }
