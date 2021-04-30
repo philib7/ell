@@ -3,7 +3,7 @@ if ( !defined('ABSPATH')) exit;
 //inventaire des collection en base
 //récuperation de la liste des collection
 function ell_get_collections() {
-    $agent_query = new WP_Query(
+    $collection_query = new WP_Query(
         array (
             'post_type' => array (
                 'collection'
@@ -22,15 +22,15 @@ function ell_get_collections() {
     /* Restore original Post Data */
     wp_reset_postdata();
 
-    if (isset($agent_query->posts)) {
-        return $agent_query->posts;
+    if (isset($collection_query->posts)) {
+        return $collection_query->posts;
     } else {
         return;
     }
 }
 
 function ell_get_collection_is_header() {
-    $agent_query = new WP_Query(
+    $collection_query = new WP_Query(
         array (
             'post_type' => array (
                 'collection'
@@ -49,8 +49,8 @@ function ell_get_collection_is_header() {
     /* Restore original Post Data */
     wp_reset_postdata();
 
-    if (isset($agent_query->posts)) {
-        return $agent_query->posts;
+    if (isset($collection_query->posts)) {
+        return $collection_query->posts;
     } else {
         return;
     }

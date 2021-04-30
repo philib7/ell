@@ -2,28 +2,33 @@
 if ( !defined('ABSPATH')) exit;
 //inventaire des produits en base
 //récuperation de la liste des produits
-function ell_get_products() {
-    $agent_query = new WP_Query(
+function ell_get_products($nbr_per_page = null, $offset = null) {
+    if (!isset($nbr_per_page)) {
+        $nbr_per_page = '-1';
+    }
+
+    $product_query = new WP_Query(
         array (
             'post_type' => array (
                 'produit'
             ),
-            'posts_per_page' => -1
+            'offset'         => $offset,
+            'posts_per_page' => $nbr_per_page
         )
     );
 
     /* Restore original Post Data */
     wp_reset_postdata();
 
-    if (isset($agent_query->posts)) {
-        return $agent_query->posts;
+    if (isset($product_query->posts)) {
+        return $product_query->posts;
     } else {
         return;
     }
 }
 
 function ell_get_products_by_collection($id) {
-    $agent_query = new WP_Query(
+    $product_query = new WP_Query(
         array (
             'post_type' => array (
                 'produit'
@@ -42,8 +47,8 @@ function ell_get_products_by_collection($id) {
     /* Restore original Post Data */
     wp_reset_postdata();
 
-    if (isset($agent_query->posts)) {
-        return $agent_query->posts;
+    if (isset($product_query->posts)) {
+        return $product_query->posts;
     } else {
         return;
     }
@@ -61,6 +66,22 @@ function ell_get_type_byProduct_id ($id) {
 function ell_set_type_byProduct_id ($id, $value) {
     if ($id && $value) {
         return update_field('field_60800db83a168', $value, $id);
+    } else {
+        return;
+    }
+}
+
+function ell_get_gallerie_byProduct_id ($id) {
+    if ($id) {
+        return get_field('field_608c3bab22e28', $id);
+    } else {
+        return false;
+    }
+}
+
+function ell_set_gallerie_byProduct_id ($id, $value) {
+    if ($id && $value) {
+        return update_field('field_608c3bab22e28', $value, $id);
     } else {
         return;
     }
