@@ -31,7 +31,7 @@ get_header(); ?>
     <div class="container max-width-1668 relative z-10">
         <div class="flex flex-col lg:flex-row items-center justify-between card w-full">
             <div class="text-center text-EllGrayLight lg:w-1/2 w-full flex flex-col items-center justify-center mt-8 px-4 lg:pt-0">
-                <div class="uppercase font-montserrat">Collection</div>
+                <div class="uppercase font-montserrat tracking-widest">Collection</div>
                 <?php title($name); ?>
             </div>
 
@@ -44,7 +44,7 @@ get_header(); ?>
             <?php
             $counter = 0;
             foreach ($models as $key => $value) :
-                $link = get_home_url().'/joaillerie?collect='.$id.'&ensemble='.$value->ID;
+                $link = get_home_url().'/joaillerie?collect='.$id.'&ensemble='.$value->ID.'&sendSearchFilter=true';
                 $titre = ell_get_titre_model_id($value->ID);
                 $image = ell_get_image_model_id($value->ID);
 
@@ -65,21 +65,7 @@ get_header(); ?>
         </div>
 
         <!-- La Maison Bloc -->
-        <a class="flex flex-col lg:flex-row-reverse items-center justify-between bg-EllGrayVeryLight card mt-8 md:mt-16" href="<?php echo get_home_url().'/la-maison'; ?>">
-            <div class="text-center text-EllGrayLight lg:w-1/2 w-full flex flex-col items-center justify-center px-4 pt-4 lg:pt-0">
-                <div class="lg:text-7xl text-4xl">La Maison</div>
-
-                <div class="mt-6 uppercase lg:overflow-hidden">
-                    <div class="card-discover font-montserrat tracking-widest">
-                        Découvrir
-                    </div>
-                </div>
-            </div>
-
-            <div class="w-full lg:w-1/2">
-                <img src="<?php echo $homeHouse; ?>" class="w-full" alt="">
-            </div>
-        </a>
+        <?php card_large(get_home_url().'/la-maison/', 'La maison', $homeHouse, '' ,'Découvrir'); ?>
     </div>
     <!-- Fin Contenu -->
 

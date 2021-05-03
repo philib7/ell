@@ -34,7 +34,11 @@ function move_cloud () {
 
     if (cloud1) {
         observer.observe(cloud1);
+    }
+    if (cloud2) {
         observer.observe(cloud2);
+    }
+    if (cloudCard) {
         observer.observe(cloudCard);
     }
 }

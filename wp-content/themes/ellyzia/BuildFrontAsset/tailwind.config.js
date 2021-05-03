@@ -31,13 +31,13 @@ module.exports = {
         fontSize: {
           '7xl': [
             '4.5rem', {
-              letterSpacing: '-0.02em',
+              letterSpacing: '0.09em',
               lineHeight: '1',
             }
           ],
           '8xl': [
             '6rem', {
-              letterSpacing: '-0.02em',
+              letterSpacing: '0.09em',
               lineHeight: '1',
             }
           ],

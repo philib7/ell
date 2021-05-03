@@ -17,7 +17,7 @@ function ell_header_desktop($logo) {
     }
 ?>
     <div class="container pt-4 pb-6">
-        <div class="lg:flex items-end">
+        <div class="lg:flex items-end font-sortsmillgoudy tracking-widest">
             <div class="logo">
                 <a href="<?php echo get_home_url(); ?>">
                     <?php

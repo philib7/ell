@@ -9,7 +9,7 @@ $cloud2 = get_template_directory_uri().'/BuildFrontAsset/dist/images/bigcloud2.p
 $homeCollection = get_template_directory_uri().'/BuildFrontAsset/dist/images/homecollection.png';
 $homeHouse = get_template_directory_uri().'/BuildFrontAsset/dist/images/capture.png';
 
-$list_collection = ell_get_collections();
+$list_collection = ell_get_collections_isnot_header();
 
 $collection_header = ell_get_collection_is_header();
 
@@ -39,7 +39,7 @@ get_header(); ?>
                 <!-- La Maison Bloc -->
                 <a class="flex flex-col lg:flex-row items-center justify-between bg-EllGrayVeryLight card w-full" href="<?php echo $link; ?>">
                     <div class="text-center text-EllGrayLight lg:w-1/2 w-full flex flex-col items-center justify-center mt-8 px-4 lg:pt-0">
-                        <div class="uppercase font-montserrat">Collection</div>
+                        <div class="uppercase font-montserrat text-sm tracking-widest">Collection</div>
                         <?php title($titre); ?>
 
                         <div class="mt-6 uppercase lg:overflow-hidden text-center">
@@ -79,6 +79,9 @@ get_header(); ?>
                 <!-- Left -->
 
             <?php endforeach; ?>
+
+             <!-- La Maison Bloc -->
+             <?php card_large(get_home_url().'/la-maison/', 'La maison', $homeHouse, '' ,'Découvrir'); ?>
         </div>
     <!-- Fin Contenu -->
 

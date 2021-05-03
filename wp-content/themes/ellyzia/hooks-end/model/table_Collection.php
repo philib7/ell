@@ -8,6 +8,26 @@ function ell_get_collections() {
             'post_type' => array (
                 'collection'
             ),
+            'posts_per_page' => -1
+        )
+    );
+
+    /* Restore original Post Data */
+    wp_reset_postdata();
+
+    if (isset($collection_query->posts)) {
+        return $collection_query->posts;
+    } else {
+        return;
+    }
+}
+
+function ell_get_collections_isnot_header() {
+    $collection_query = new WP_Query(
+        array (
+            'post_type' => array (
+                'collection'
+            ),
             'meta_query' => array (
                 array (
                     'key' => 'is_header',

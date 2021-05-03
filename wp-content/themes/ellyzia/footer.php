@@ -9,12 +9,14 @@ $logo = get_template_directory_uri().'/BuildFrontAsset/dist/images/logo.svg';
                         <!-- col1 -->
                         <div>
                             <div class="w-full flex justify-center lg:block">
-                                <div class="logo">
-                                    <?php
-                                    $svg = file_get_contents($logo);
-                                    echo $svg;
-                                    ?>
-                                </div>
+                                <a href="<?php echo get_home_url(); ?>">
+                                    <div class="logo">
+                                        <?php
+                                        $svg = file_get_contents($logo);
+                                        echo $svg;
+                                        ?>
+                                    </div>
+                                </a>
                             </div>
 
                             <div class="mt-2 text-EllGrayLight">
@@ -58,6 +60,8 @@ $logo = get_template_directory_uri().'/BuildFrontAsset/dist/images/logo.svg';
                         </div>
                     </div>
                 </div>
+
+                <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
             </footer>
         </main>
 

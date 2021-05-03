@@ -11,7 +11,7 @@ function card_small ($link, $titre, $image, $label1, $label2) {
 
             <div class="text-EllGrayLight mt-8 lg:mt-16 absolute top-0 w-full">
                 <div class="flex flex-col items-center">
-                    <div class="uppercase font-montserrat"><?php echo $label1 ?></div>
+                    <div class="uppercase font-montserrat text-sm tracking-widest"><?php echo $label1 ?></div>
                     <?php title($titre); ?>
                 </div>
 

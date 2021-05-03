@@ -9,7 +9,7 @@
         <title>Wp From Scratch</title>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
-
+        <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
         <!-- <link href="<?php echo get_template_directory_uri(); ?>/public/dist/images/favicon/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon"> -->
 
         <!-- WordPress head -->
